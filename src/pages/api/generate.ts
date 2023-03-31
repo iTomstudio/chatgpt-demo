@@ -24,10 +24,10 @@ export const post: APIRoute = async(context) => {
       },
     }), { status: 400 })
   }
-  const today = new Date()
-  const dateString = `${today.getFullYear()}${today.getMonth() + 1}${today.getDate()}19961024`
-  const base64encoded = btoa(dateString);
-  if (base64encoded && base64encoded !== pass) {
+  // const today = new Date()
+  // const dateString = `${today.getFullYear()}${today.getMonth() + 1}${today.getDate()}19961024`
+  // const base64encoded = btoa(dateString);
+  if (sitePassword && sitePassword !== pass) {
     return new Response(JSON.stringify({
       error: {
         message: 'Invalid password.',
