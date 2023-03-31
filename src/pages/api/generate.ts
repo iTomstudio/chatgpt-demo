@@ -15,7 +15,7 @@ export const post: APIRoute = async(context) => {
   const { sign, time, messages, pass } = body
   const messages_length = messages.length
   const lastMessages = messages[messages_length - 1]
-  const log_log = `== 会话长度:${messages_length}  -- 问题:${lastMessages}  `
+  const log_log = `== 会话长度:${messages_length}  -- 问题:${lastMessages.content}  `
   console.log(log_log)
   if (!messages) {
     return new Response(JSON.stringify({
